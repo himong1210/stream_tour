@@ -23,10 +23,20 @@ public class MonsterTestApp {
 		System.out.println(monsters.get(0) //목록의 위치 번호가 0부터 시작합니다
 				.getName());		//리스트 안의 슬라임 객체 얻음
 		    						//슬라임 이름을 가져옵니다.
+		System.out.println("----------------------");
 		//1.몬스터 리스트 데이터 처리
 		//스트림 이용
 		monsters.stream()
-			.forEach(monster -> System.out.println(monster.getName()));
+		//  .filter(monster -> monster.getGrade().equals("희귀"))
+		    .map(monster -> "몬스터: " + monster.getName())
+		    .sorted()
+			.forEach(label -> System.out.println(label));
+		
+		long totalCount = monsters.stream()
+				.filter(monster -> monster.getGrade().equals("희귀"))
+				.count();
+		System.out.println("total = " + totalCount);
+		
 	}
 
 }

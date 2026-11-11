@@ -28,6 +28,7 @@ public class AnonymousExample{
 		//action.run();
 		
 		// 3. 익명 클래스를 -> 람다함수로 바꿔서 이용한 기능 구현
+		@SuppressWarnings("unused")
 		LabAction action = () -> System.out.println("연구소에 오신것을 환영합니다.");
 		
 	

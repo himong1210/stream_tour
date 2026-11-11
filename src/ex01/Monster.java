@@ -24,9 +24,10 @@ public class Monster {
     }
     
     //새로운 생성자 만들기
-    public Monster(String name, String grade, int level, int exp, String element) {
+    public Monster(
+    		String name, String grade, int level, int exp, String element) {
     	//완전한 생성자를 부르고 모자라는 멤버는 초기값을 영점처리
-    	this(name, grade, level, exp, "", 0);
+    	this(name, grade, level, exp, element, 0);
     }
 
 	// Getter: private 필드의 값을 읽을 수 있도록 도와줍니다.
@@ -56,6 +57,11 @@ public class Monster {
 
 	// 도감에 표시할 정보를 한 줄의 문자열로 만들어 줍니다.
 	public String getInfo() {
-		return name + " / " + grade + " / 레벨 " + level + " / 경험치 " + exp + " / 속성 " + element;
+		return name + " / " + 
+			   grade + " / 레벨 " +
+			   level + " / 경험치 " + 
+			   exp + " / 속성 " +
+			   element + " / 나이 " +
+			   age;
 	}
 }
