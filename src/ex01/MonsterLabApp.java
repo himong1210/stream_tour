@@ -67,6 +67,9 @@ public class MonsterLabApp {
                     running = false;
                     System.out.println("연구소를 종료합니다. 오늘도 수고하셨습니다!");
                     break;
+                case "4":
+                	showStrongMonsters();
+                	break;
                 default:
                     System.out.println("메뉴 번호를 다시 확인해 주세요.");
             }
@@ -80,10 +83,19 @@ public class MonsterLabApp {
         scanner.close();
     }
 
-    private static void printMenu() {
+
+	private static void printMenu() {
         System.out.println("\n--------------- 연구소 메뉴 ---------------");
         System.out.println("1. 몬스터 도감 보기");
         System.out.println("2. 몬스터 클래스 알아보기");
+        System.out.println("3. 몬스터 한 마리씩 관찰하기");
+        System.out.println("4. 강한 몬스터 찾기");        
+        System.out.println("5. 희귀 몬스터 찾기");        
+        System.out.println("6. 몬스터 이름표 만들기");        
+        System.out.println("7. 이름순 도감 보기");        
+        System.out.println("8. 연구 통계 보기");        
+        System.out.println("9. 강한 몬스터 목록 만들기");        
+        System.out.println("10. 최종 연구 보고서");        
         System.out.println("0. 연구소 종료");
         System.out.println("------------------------------------------");
     }
@@ -106,6 +118,11 @@ public class MonsterLabApp {
         System.out.println(monsters.get(0).getInfo());
         System.out.println("\n추가로 체력, 공격력, 방어력, 특수 기술을 넣어 확장할 수 있습니다.");
     }
+    
+    private static void showStrongMonsters() {
+  		System.out.println("");
+  		
+  	}
 
 
 }

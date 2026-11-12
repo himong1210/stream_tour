@@ -32,11 +32,22 @@ public class MonsterTestApp {
 		    .sorted()
 			.forEach(label -> System.out.println(label));
 		
-		long totalCount = monsters.stream()
-				.filter(monster -> monster.getGrade().equals("희귀"))
-				.count();
+		long totalCount = monsters.stream().count();
 		System.out.println("total = " + totalCount);
 		
+		// 희귀한 몬스터들 리스트
+		List<String> rareNames = monsters.stream()
+				.filter(monster -> monster.getGrade().equals("희귀"))
+				.map(monster -> monster.getName())
+				.toList();
+		// rareNames 리스트 내용 출력
+		System.out.println(rareNames);
+		
+		//강한 몬스터 이름 리스트
+		List<String> strongNames = monsters.stream()
+				.filter(monster -> monster.getLevel() >= 10)
+				.map(monster -> monster.getName())
+				.toList();
 	}
 
 }
